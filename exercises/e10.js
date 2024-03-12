@@ -3,10 +3,20 @@
 // Array example: bankAccounts in /data/data.js
 // getClientsWithLetterInName(bankAccounts, 'e') => ['Kevin', 'Steven', ...]
 
+import { bankAccounts } from "../data/data";
+
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  let param = new RegExp(letter, "i");
+  let clientNames = [];
+    for (let i = 0; i < array.length; i++) {
+      if (param.test(array[i].name)) {
+        clientNames.push(array[i].name);
+      }
+    }
+  return clientNames;
 }
+getClientsWithLetterInName(bankAccounts, 'a');
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

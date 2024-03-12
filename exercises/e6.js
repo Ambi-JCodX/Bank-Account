@@ -3,10 +3,19 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
+import { bankAccounts } from "../data/data";
+
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+ let namesOfBalances0 = [];
+  for (let i = 0; i < array.length; i++) {
+    if(array[i].balance == 0.0){
+      namesOfBalances0.push(array[i].name);
+    }
+  }
+  return namesOfBalances0;
 }
+getClientWithNoMoney(bankAccounts);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

@@ -7,9 +7,14 @@
 
 export function doesArrayInclude(array, value) {
   // Your code goes here...
-
+let include = new RegExp(value, "i");
+    if (include.test(array)){
+      return true;
+    } else {
+      return false;
+    }
 }
-
+doesArrayInclude([1, 2, 3], )
 
 
 // === TEST YOURSELF ===

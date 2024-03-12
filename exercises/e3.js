@@ -10,8 +10,12 @@
 
 export function getAverage(array) {
   // Your code goes here...
-
-}
+  let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+    return sum / array.length;
+  }
 
 
 /** 
@@ -23,9 +27,14 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-
+  let sum = 0;
+  for (let i = 0; i < str.length; i++){
+    if(/[0-9]/.test(str[i])) {
+      sum += parseInt(str[i]);
+    }
+  }
+  return sum;
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"

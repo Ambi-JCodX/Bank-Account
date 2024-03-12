@@ -5,11 +5,32 @@
 // separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]) -> [["alice", "andrew", "mark"], ["jon", "jimmy"]]
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
+import { classSeatsFlattened } from "../data/data";
+
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-
+let separateNames = [];
+let namesWithA = [];
+let namesWithout = [];
+  for (let i = 0; i < array.length; i++){
+    let correct = 0;
+    for (let x = 0; x < array[i].length; x++) {
+      if (array[i][x] === 'a') {
+         correct = 1;
+         break;
+      }
+    }
+    if (correct === 1) {
+      namesWithA.push(array[i]);
+    } else {
+      namesWithout.push(array[i]);
+    }
+  }
+  separateNames.push(namesWithA);
+  separateNames.push(namesWithout);
+  return separateNames;
 }
-
+separateNamesWithAFromRest(classSeatsFlattened);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-20"
