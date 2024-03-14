@@ -7,16 +7,17 @@ import { bankAccounts } from "../data/data";
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-  let param = new RegExp(letter, "i");
-  let clientNames = [];
-    for (let i = 0; i < array.length; i++) {
-      if (param.test(array[i].name)) {
-        clientNames.push(array[i].name);
+  let usersWithLetter = [];
+    for (let users of array) {
+      for (let char of users.name) {
+        if (char.toLowerCase() === letter){
+          usersWithLetter.push(users.name);
+        }
       }
     }
-  return clientNames;
+  return  usersWithLetter;
 }
-getClientsWithLetterInName(bankAccounts, 'a');
+getClientsWithLetterInName(bankAccounts, 'c');
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

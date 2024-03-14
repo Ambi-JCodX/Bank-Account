@@ -6,15 +6,18 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  // Your code goes here...
-let include = new RegExp(value, "i");
-    if (include.test(array)){
-      return true;
+  // Your code goes here... 
+  let result;
+  for (let elem of array) {
+    if (elem === value) {
+      result = true;
     } else {
-      return false;
+      result = false;
     }
+  }
+  return result
 }
-doesArrayInclude([1, 2, 3], )
+doesArrayInclude([1, 2, 3], 4)
 
 
 // === TEST YOURSELF ===

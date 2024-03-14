@@ -5,13 +5,9 @@
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
     let arr = [];
-    for (let i = 0; i <= max; i++) {
-      for (let x = 0; x <= max; x++) {
-        if (i === (x * x)) {
-          arr.push(i);
+    for (let i = 0; i * i <= max; i++) {
+          arr.push(i * i);
         }
-      }
-    }
     return arr;
   }
   console.log(getNumbersWithSquareRoots(17));
